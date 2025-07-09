@@ -34,20 +34,20 @@ const surveyData = [
     image: question1Img,
     question: '1. 누군가 실수를 저질렀을 때 당신의 반응은?',
     options: [
-      '감정적으로 화를 내고 바로잡으려 한다',
-      '이해하려 노력하며 감싸준다',
-      '조용히 관찰하며 스스로 깨닫기를 기다린다',
-      '왜 그런 실수를 했는지 끝까지 따져본다'
+      '흠.. 그런 실수는 안하는 것이 좋았을 것 같은',
+      '너 왜 실수했어 그러면 안돼',
+      '그럴 수 있지, 나도 실수하는데',
+      '왜 실수한거야? 이유를 말해줄 수 있을까?'
     ],
   },
   {
     image: question2Img,
     question: '2. 당신이 팀을 이끌어야 한다면?',
     options: [
-      '책임감 있게 앞장서서 이끈다',
-      '뒤에서 조용히 지원하며 돕는다',
-      '필요할 때만 목소리를 낸다',
-      '리더보다 분석가 역할이 편하다'
+      '남들이 하는 것보다는 내가 하는게 낫다',
+      '아무도 할 사람이 없으면 제가 할게요.',
+      '제가 굳이 해야할까요? 다른 사람이 하는 것이 괜찮을 것 같은데',
+      '뭐 시켜주면 해보기는 할게요.'
     ],
   },
   {
@@ -64,29 +64,29 @@ const surveyData = [
     image: question4Img,
     question: '4. 새로운 것을 시작할 때 당신의 태도는?',
     options: [
-      '일단 시도해보자!',
-      '계획과 분석부터 한다',
-      '조용히 고민한 후 행동한다',
-      '주변 사람의 반응을 살펴본다'
+      '일단 해보자. 그래야 뭐라도 나올테니',
+      '일단 확신이 들때까지 기다리고 확신이 들 때 시도',
+      '일단 저는 그냥 지켜만볼게요.',
+      '이거는 왜 하는거죠?'
     ],
   },
   {
     image: question5Img,
     question: '5. 친구가 힘들어할 때 당신은?',
     options: [
-      '현실적인 조언을 해준다',
-      '말없이 옆에 있어준다',
-      '이건 왜 힘든지 물어본다',
-      '강하게 다독이며 일으킨다'
+      '괜찮지 않은 것을 알기에 괜찮다는 말을 안하고 공감한다.',
+      '무슨 일 있어? 말해줄 수 있을까?',
+      '이렇게 하는 것이 좋을 것 같아 하고 해결책 제시',
+      '슬퍼할 시간은 없어 우리같이 해결하자'
     ],
   },
   {
     image: question6Img,
     question: '6. 당신의 신념에 대한 태도는?',
     options: [
-      '믿음은 행동으로 증명된다',
+      '신념은 곧 행동으로 나타낸다.',
       '의심이 생기면 끝까지 검증한다',
-      '사랑으로 설득하는 것이 중요하다',
+      '다들 믿어도 나는 확인해보고 믿는다',
       '믿음도 유연해야 한다'
     ],
   },
@@ -114,10 +114,10 @@ const surveyData = [
     image: question9Img,
     question: '9. 당신이 두려워하는 것은?',
     options: [
-      '실수로 신뢰를 잃는 것',
-      '진심을 이해받지 못하는 것',
-      '확신 없이 움직이는 것',
-      '조용히 사라지는 것'
+      '열심히 했던 것이 아무런 성과가 없을 때',
+      '나라는 사람을 아무도 기억하지 못할 때',
+      '나라는 사람의 쓸모가 사라졌을 때',
+      '진심을 다해서 말하지만 아무에게도 전해지지 않을 때'
     ],
   },
   {
@@ -146,15 +146,15 @@ const surveyData = [
 const getResult = (answers) => {
   // 예시: 0,1,2,3번 선택지 중 가장 많이 선택한 타입으로 결과 분기
   const answersMap = [
-    [[names.PETER, names.JAMES_BIG], [names.JOHN, names.ANDREW], [names.NATHANIEL, names.JAMES_SMALL], [names.THOMAS, names.PHILIP]],
-    [[names.PETER], [names.ANDREW], [names.JOHN, names.NATHANIEL], [names.PETER, names.THOMAS]],
+    [[names.JUDAH], [names.SIMON], [names.MATTHEW], [names.THADDAEUS]],
+    [[names.JAMES_BIG], [names.NATHANIEL], [names.JAMES_SMALL], [names.JUDAH]],
     [[names.JAMES_BIG, names.SIMON], [names.JOHN], [names.THOMAS], [names.MATTHEW]],
-    [[names.PETER], [names.PHILIP, names.THOMAS], [names.NATHANIEL, names.JOHN], [names.THADDAEUS]],
-    [[names.MATTHEW, names.PHILIP], [names.JOHN, names.ANDREW], [names.THOMAS], [names.PETER, names.JAMES_BIG]],
-    [[names.PETER, names.SIMON], [names.THOMAS], [names.JOHN], [names.THADDAEUS, names.MATTHEW]],
+    [[names.JAMES_BIG], [names.NATHANIEL], [names.JAMES_SMALL], [names.JUDAH]],
+    [[names.NATHANIEL], [names.THADDAEUS], [names.JUDAH], [names.SIMON]],
+    [[names.PETER, names.SIMON], [names.THOMAS], [names.PHILIP], [names.THADDAEUS, names.MATTHEW]],
     [[names.PETER], [names.THOMAS, names.PHILIP], [names.JOHN, names.ANDREW], [names.JUDAH]],
     [[names.PETER, names.SIMON], [names.JOHN, names.ANDREW], [names.PHILIP], [names.NATHANIEL, names.JAMES_SMALL]],
-    [[names.PETER], [names.JOHN, names.JUDAH], [names.THOMAS], [names.JAMES_SMALL]],
+    [[names.JAMES_BIG], [names.JAMES_SMALL], [names.ANDREW], [names.THADDAEUS]],
     [[names.PETER], [names.JOHN, names.ANDREW], [names.PHILIP, names.THOMAS], [names.MATTHEW]],
     [[], [], [], []],
   ]
